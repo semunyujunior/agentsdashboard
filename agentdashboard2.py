@@ -3,7 +3,7 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 
 # Load and clean the data
-file_path = r'C:\Users\DELL\Downloads\HARVERST.xlsx'
+file_path = os.path.join(os.path.dirname(__file__), 'HARVERST.xlsx')
 data_clean = pd.read_excel(file_path, header=1)
 data_clean = data_clean[['Region', 'District', 'FBA Name', "DAC's Name", 'Amount of seed supplied in kgs', 'Harvest status', 'Threshing status', 'Harvested in Kgs']]
 data_clean.columns = ['Region', 'District', 'FBA_Name', 'DAC_Name', 'Seeds_Used_in_Kgs', 'Harvest_Status', 'Threshing_Status', 'Harvest_Amount_in_Kgs']
