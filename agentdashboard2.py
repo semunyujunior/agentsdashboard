@@ -235,6 +235,10 @@ def display_page(pathname):
         return dac_layout
     else:
         return '404'
+        
+# Start the ngrok tunnel
+public_url = ngrok.connect(port=8050)  # Assuming your Dash app runs on port 8050
+print(f"Shareable URL: {public_url}")
 
 # Run the app
 if __name__ == '__main__':
